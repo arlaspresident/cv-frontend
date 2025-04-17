@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("experience-list");
   
-    fetch("http://localhost:3000/api/workexperience")
+    fetch("https://cv-api-production-14be.up.railway.app/api/workexperience")
       .then((res) => res.json())
       .then((data) => {
         data.forEach((item) => {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
   
-        fetch("http://localhost:3000/api/workexperience", {
+        fetch("https://cv-api-production-14be.up.railway.app/api/workexperience", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
