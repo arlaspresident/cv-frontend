@@ -1,0 +1,24 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 600px;
+    background: #fafafa;
+  }
+  
+  header {
+    margin-bottom: 2rem;
+  }
+  
+  nav a {
+    margin-right: 1rem;
+  }
+  
+  .experience {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
