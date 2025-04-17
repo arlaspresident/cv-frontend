@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lägg till erfarenhet</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lägg till erfarenhet</h1>
+      <nav>
+        <a href="index.html">Start</a> |
+        <a href="add.html">Lägg till</a> |
+        <a href="about.html">Om sidan</a>
+      </nav>
+    </header>
+
+    <main>
+      <form id="experience-form">
+        <input type="text" name="companyname" placeholder="Företagsnamn" required />
+        <input type="text" name="jobtitle" placeholder="Jobbtitel" required />
+        <input type="text" name="location" placeholder="Plats" required />
+        <input type="date" name="startdate" required />
+        <input type="date" name="enddate" required />
+        <textarea name="description" placeholder="Beskrivning" required></textarea>
+        <button type="submit">Lägg till</button>
+      </form>
+      <p id="status-msg"></p>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -32,4 +32,41 @@ document.addEventListener("DOMContentLoaded", () => {
       month: "short",
     });
   }
+
+  //formulärhantering för add
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("experience-form");
+    const msg = document.getElementById("status-msg");
+  
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+  
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+  
+        fetch("http://localhost:3000/api/workexperience", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error("något gick fel");
+            }
+            return res.json();
+          })
+          .then((result) => {
+            msg.textContent = "erfarenhet sparad";
+            form.reset();
+          })
+          .catch((err) => {
+            msg.textContent = "fel: " + err.message;
+          });
+      });
+    }
+  });
+  
   
