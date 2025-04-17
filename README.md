@@ -1,5 +1,8 @@
 # cv frontend
 
+## livelänk
+https://cv-frontendd.netlify.app 
+
 detta är en fristående webbplats som använder ett rest api för att visa och lägga till arbetserfarenheter. sidan är skapad som del av kursen backend-baserad webbutveckling.
 
 ## teknik
