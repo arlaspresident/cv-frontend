@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("experience-list");
+    if (!list) return;
   
     fetch("https://cv-api-production-14be.up.railway.app/api/workexperience")
       .then((res) => res.json())
@@ -14,7 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>${formatDate(item.startdate)} → ${formatDate(item.enddate)}</p>
             <p>${item.description}</p>
           `;
+
+          //ta bort knapp
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Radera";
+          deleteBtn.classList.add("delete-btn");
+          deleteBtn.addEventListener("click", () => {
+            if (confirm("Vill du verkligen ta bort den här erfarenheten?")) {
+              fetch(`https://cv-api-production-14be.up.railway.app/api/workexperience/${item.id}`, {
+                method: "DELETE"
+              })
+                .then(res => {
+                  if (!res.ok) throw new Error("Kunde inte radera posten");
+                  article.remove();
+                })
+                .catch(err => {
+                  console.error("Fel vid radering:", err);
+                });
+            }
+          });
   
+          article.appendChild(deleteBtn);
           list.appendChild(article);
         });
       })
@@ -44,6 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
+
+        if (Object.values(data).some(val => val.trim() === "")) {
+          msg.textContent = "alla fält måste fyllas i";
+          return;
+        }
   
         fetch("https://cv-api-production-14be.up.railway.app/api/workexperience", {
           method: "POST",
