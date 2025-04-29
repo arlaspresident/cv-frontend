@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const list = document.getElementById("experience-list");
     if (!list) return;
   
-    fetch("https://cv-api-production-14be.up.railway.app/api/workexperience")
+    fetch("https://nosql3-production.up.railway.app/api/experiences")
       .then((res) => res.json())
       .then((data) => {
         data.forEach((item) => {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           deleteBtn.classList.add("delete-btn");
           deleteBtn.addEventListener("click", () => {
             if (confirm("Vill du verkligen ta bort den här erfarenheten?")) {
-              fetch(`https://cv-api-production-14be.up.railway.app/api/workexperience/${item.id}`, {
+              fetch(`https://nosql3-production.up.railway.app/api/experiences/${item._id}`, {
                 method: "DELETE"
               })
                 .then(res => {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
   
-        fetch("https://cv-api-production-14be.up.railway.app/api/workexperience", {
+        fetch("https://nosql3-production.up.railway.app/api/experiences", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
