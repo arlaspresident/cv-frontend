@@ -1,4 +1,4 @@
-# cv frontend
+# cv frontend - nosql version
 
 ## livelänk
 https://cv-frontendd.netlify.app 
@@ -27,9 +27,9 @@ innehåller information om uppgiften, vilka tekniker som använts och vilka slut
 ## api
 
 sidan använder ett eget rest api som ligger på:
-http://localhost:3000/api/workexperience
+https://nosql3-production.up.railway.app/api/experiences
 
-api:t är byggt med express och mysql. det måste vara igång för att denna webbplats ska fungera.
+api:t är byggt med express och mongodb atlas. det måste vara igång för att denna webbplats ska fungera.
 
 ## hur man startar
 
@@ -43,4 +43,6 @@ npm run start
 parcel startar då sidan på http://localhost:1234
 
 notera att api:t också måste vara igång på port 3000
+alternativt kan du använda det publicerade api:t på railway, som är igång på:
+ https://nosql3-production.up.railway.app/api/experiences
 
