@@ -46,3 +46,6 @@ notera att api:t också måste vara igång på port 3000
 alternativt kan du använda det publicerade api:t på railway, som är igång på:
  https://nosql3-production.up.railway.app/api/experiences
 
+### viktigt om servern
+
+api:t är hostat på railway, vilket innebär att servern kan gå ner i viloläge vid inaktivitet. första anropet kan därför ta några sekunder innan svar kommer, men därefter fungerar allt som vanligt.
